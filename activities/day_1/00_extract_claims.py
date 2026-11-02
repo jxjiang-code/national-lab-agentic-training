@@ -1,0 +1,27 @@
+import argparse
+
+from openai import OpenAI
+
+def main(model: str, abstract: str):
+    with open(abstract) as fp:
+        text = fp.read()
+    client = OpenAI()
+
+    prompt ='Extract the claims and evidence from this paper:\n {text}'
+
+    # TODO: Use the openAI client to extract claims from the abstract
+    # Try putting in an abstract or paper that you understand so you
+    # can validate the results. 
+    # Vary the model and the temperature to investigate how those parameters
+    # effect the results coming out of the model.
+    # How are the models performing? How could you measure the performance?
+    # Could you scale the validation up?
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--model')
+    parser.add_argument('-a', '--abstract')
+    ops = parser.parse_args()
+
+    main(ops.model, ops.abstract)
