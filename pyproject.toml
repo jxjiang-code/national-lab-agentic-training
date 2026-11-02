@@ -3,6 +3,11 @@ name = "national-lab-agentic-training"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
-    "pydantic-ai>=2.63.0",
+    "globus-compute-sdk>=4.19.0",
+    "langchain[mcp]>=1.4.8",
+    "langchain-openai>=1.7.3",
     "pydantic[email]>=2.14.1",
+    "openai>=3.40.0",
+    "langgraph>=1.2.19",
+    "fastmcp>=4.1.5",
 ]

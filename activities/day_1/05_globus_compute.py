@@ -1,18 +1,17 @@
+import argparse
+import random
+from functools import wraps
+
+from langchain_openai import ChatOpenAI
+from langchain.agents import create_agent
+
 from globus_compute_sdk import Executor
 
-compute_endpoint = '9a947ba5-f537-4681-acf3-cc66485aadec' # Polaris Globus Compute endpoint
+compute_endpoint = None  # TODO: Fill in the endpoint id that you started
 
-POLARIS_CONFIG = {
-    'account': 'ModCon',
-    'queue': 'debug',
-    'config_key': 'source /home/yadunand/setup_openmm.sh'
-}
-
-gce = Executor(endpoint_id=compute_endpoint, 
-               user_endpoint_config=POLARIS_CONFIG)
+gce = Executor(endpoint_id=compute_endpoint)
 
 
-from functools import wraps
 def gce_wrapper(func):
     """Wrapper to execute the function via Globus Compute"""
     @wraps(func)
@@ -70,20 +69,9 @@ def compute_trajectory(n_atoms: int = 27, n_steps: int = 100) -> dict:
     }
 
 
-from langchain_openai import ChatOpenAI
-from langchain.agents import create_agent
-import json
-import random
-
 requests=["How many prime numbers are there below 500?",
         "What is the potential energy of a water molecule",
         "What is the MD trajectory of water molecules"]
-
-llm = ChatOpenAI(
-    model='gpt-oss-120b',
-#    api_key=api_key,
-#    base_url=base_url,
-)
 
 CHOOSER_PROMPT = """You are a task router. Given a user request, choose which computation to run.
 
@@ -93,22 +81,35 @@ Available computations:
 3. "trajectory" - Run MD simulation (for physics/dynamics/trajectory questions)
 """
 
-tools = [compute_primes, compute_energy, compute_trajectory]
-agent = create_agent(
-    llm,
-    tools=tools,
-    system_prompt=CHOOSER_PROMPT,
-)
+def main(model: str):
+    llm = ChatOpenAI(model=model)
 
-# Run the agent
-request=random.choice(requests)
-for chunk in agent.stream(
-    {"messages": [{"role": "user", "content": request}]},
-    stream_mode='updates',
-    version="v2"
-):
-    if chunk["type"] == "updates":
-        for step, data in chunk["data"].items():
-            print(f"step: {step}")
-            print(f"content: {data['messages'][-1].content_blocks}")
+    tools = [compute_primes, compute_energy, compute_trajectory]
+    agent = create_agent(
+        llm,
+        tools=tools,
+        system_prompt=CHOOSER_PROMPT,
+    )
 
+    # Run the agent
+    request=random.choice(requests)
+
+    print(f'User: {request}')
+
+    for chunk in agent.stream(
+        {"messages": [{"role": "user", "content": request}]},
+        stream_mode='updates',
+        version="v2"
+    ):
+        if chunk["type"] == "updates":
+            for step, data in chunk["data"].items():
+                print(f"step: {step}")
+                print(f"content: {data['messages'][-1].content_blocks}")
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--model', default='beam-1.0-bf16')
+    ops = parser.parse_args()
+
+    main(ops.model)

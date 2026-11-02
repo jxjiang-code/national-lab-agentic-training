@@ -7,7 +7,7 @@ def main(model: str, abstract: str):
         text = fp.read()
     client = OpenAI()
 
-    prompt ='Extract the claims and evidence from this paper:\n {text}'
+    prompt = f'Extract the claims and evidence from this paper:\n {text}'
 
     # TODO: Use the openAI client to extract claims from the abstract
     # Try putting in an abstract or paper that you understand so you
@@ -20,8 +20,8 @@ def main(model: str, abstract: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--model')
-    parser.add_argument('-a', '--abstract')
+    parser.add_argument('-m', '--model', default='beam-1.0-bf16')
+    parser.add_argument('-a', '--abstract', default='sample_abstract.txt')
     ops = parser.parse_args()
 
     main(ops.model, ops.abstract)
