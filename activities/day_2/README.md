@@ -41,7 +41,7 @@ After you are done, ask it to do two different tasks:
 
 Cost estimates: Track the number of tokens used by your coding agent and produce a cost estimate for the running conversation. Use Together.ai pricing to determine the cost per token of open source models.
 
-Tool Limits: Reading a large file or executing a command can overwhelm the agent context very quickly. Change the read tool to limit the size of the results to reduce context. Think about how the tool should change the limitations of your approach.
+Tool Limits: Reading a large file or executing a command can overwhelm the agent context very quickly. Change the read tool to limit the size of the results to reduce context. How does your approach limit the cablities of the tool?
 
 Safe Command Classification: Currently the code asks for your approval before any tool call. This ensures that the agent cannot run destructive commands. Implement a basic classifier that allows some safe commands and only asks on commands that may potentially be dangerous. What commands do you consider dangerous and how do you decide? Are certain calls always safe?
 
