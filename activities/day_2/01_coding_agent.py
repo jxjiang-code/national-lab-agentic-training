@@ -26,7 +26,7 @@ Refuse unsafe or unethical tasks.
 """
 
 def read_file(path: str) -> str:
-    '''Reads a file and returns its full contents as text.
+    '''Reads a full file.
 
     Args:
         path: Path to the file, relative to the current directory.
@@ -34,9 +34,11 @@ def read_file(path: str) -> str:
     return Path(path).read_text()
 
 def edit_file(path: str, old_content: str, new_content: str) -> bool:
-    '''Edits a file by replacing the first occurrence of old_content with
-    new_content. To append to a file, pass an empty old_content; new_content
-    is added to the end of the file, which is created if it does not exist.
+    '''Edits a file.
+    
+    Replaces the first occurrence of old_content with new_content.
+    To append to a file, pass an empty old_content. 
+    The file is created if it does not exist.
 
     Args:
         path: Path to the file, relative to the current directory.
@@ -63,9 +65,7 @@ TOOL_REGISTRY = {
 }
 
 def generate_tool_schema(func: Callable[..., Any]) -> dict:
-    '''Generates the tool description for the model from the function's
-    name, docstring, and type hints.
-    '''
+    '''Generates the tool description.'''
 
     return {
         'type': 'function',
@@ -79,12 +79,9 @@ def extract_tool_calls(response: Response) -> list[ResponseFunctionToolCall]:
     return [item for item in response.output if item.type == 'function_call']
 
 def execute_tool_call(call: ResponseFunctionToolCall) -> dict[str, Any]:
-    '''Runs the requested tool and packages the result for the conversation.
-
-    Every call must be approved by the user before it runs. Errors and
-    denials are returned to the model as the tool output so it can recover.
-    '''
+    '''Runs the requested tool.'''
     
+    print(f"{SYSTEM_COLOR}Tool call: {call.name}({call.arguments}){RESET_COLOR}")
     tool = TOOL_REGISTRY.get(call.name)
     if tool is None:
         output = f"Error: unknown tool '{call.name}'"
@@ -113,7 +110,7 @@ def coding_agent_loop(model: str, max_iter: int = 20):
     conversation: list[dict[str, Any]]= []
     while True:
         try:
-            user_input = input(f"{YOU_COLOR}You:{RESET_COLOR}:")
+            user_input = input(f"{YOU_COLOR}You:{RESET_COLOR} ")
         except (KeyboardInterrupt, EOFError):
             break
 
@@ -126,9 +123,9 @@ def coding_agent_loop(model: str, max_iter: int = 20):
             "content": user_input.strip()
         })
 
-        # TODO: Implemet the tool calling loop. 
+        # TODO: Implement the tool calling loop. 
         # Exit the loop when the model does not make a tool call
-        # Or after 20 iterations.
+        # Or after `max_iter` iterations.
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
