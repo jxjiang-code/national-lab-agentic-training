@@ -35,25 +35,49 @@ Quality scores:
 '''
 
 
-async def main(model: str, paper: str, n: int = 4):
+async def self_consistency(model: str, paper: str, n: int = 4):
     with open(paper) as fp:
         text = fp.read()
     client = AsyncOpenAI()
 
+    # TODO: Call the review prompt on the paper. Use async to parallelize the calls.
+    review_futures = ...
+    reviews = await asyncio.gather(*review_futures)
+
+    # TODO: Use a majority vote or average to unify the scores
+
+
+async def tree_of_thought(model: str, paper: str, n: int = 4):
+    with open(paper) as fp:
+        text = fp.read()
+    client = AsyncOpenAI()
 
     # TODO: Call the review prompt on the paper. Use async to parallelize the calls.
     review_futures = ...
     reviews = await asyncio.gather(*review_futures)
-    
 
     # TODO: Call model with the metareview prompt
-    # TODO: Call the model with the score prompt to produce a score prompt
+
+    # TODO: Call the model with the score prompt to produce a score
+
+
+STRATEGIES = {
+    'self-consistency': self_consistency,
+    'tree-of-thought': tree_of_thought,
+}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-m', '--model', default='beam-1.0-bf16')
     parser.add_argument('-p', '--paper', default='agency_as_paradigm.tex')
     parser.add_argument('-n', '--reps', type=int, default=4)
+    parser.add_argument(
+        '-s', '--strategy',
+        choices=STRATEGIES.keys(),
+        default='self-consistency',
+        help='Reasoning pattern used to review the paper',
+    )
     ops = parser.parse_args()
 
-    asyncio.run(main(ops.model, ops.paper, ops.reps))
+    strategy = STRATEGIES[ops.strategy]
+    asyncio.run(strategy(ops.model, ops.paper, ops.reps))

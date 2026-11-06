@@ -43,7 +43,8 @@ Does the review you get from a tree-of-thought or using self-consistency seem be
 How could we evaluate the review? Should these reviews be aligned with human reviews?
 
 ```
-uv run python 01_review_claims.py --paper agency_as_paradigm.tex --reps 4
+uv run python 01_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy self-consistency
+uv run python 01_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy tree-of-thought
 ```
 
 
