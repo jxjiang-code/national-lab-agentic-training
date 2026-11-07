@@ -1,3 +1,4 @@
+import os
 import argparse
 import random
 from functools import wraps
@@ -7,9 +8,20 @@ from langchain.agents import create_agent
 
 from globus_compute_sdk import Executor
 
-compute_endpoint = None  # TODO: Fill in the endpoint id that you started
+POLARIS_ENDPOINT = '9a947ba5-f537-4681-acf3-cc66485aadec'
 
-gce = Executor(endpoint_id=compute_endpoint)
+compute_endpoint = os.environ.get('GLOBUS_COMPUTE_ENDPOINT', '')
+if not compute_endpoint:
+    raise ValueError('Set GLOBUS_COMPUTE_ENDPOINT to an endpoint ID')
+
+if compute_endpoint == POLARIS_ENDPOINT:
+    POLARIS_CONFIG = {
+        'account': 'ANL-FermiAgenticTraining',
+        'queue': 'debug',
+    }
+    gce = Executor(endpoint_id=compute_endpoint, user_endpoint_config=POLARIS_CONFIG)
+else:
+    gce = Executor(endpoint_id=compute_endpoint)
 
 
 def gce_wrapper(func):
