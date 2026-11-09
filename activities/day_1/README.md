@@ -21,21 +21,21 @@ If you switch to a model on a different cluster (e.g. Sophia, Metis, or Tara), y
 
 All of the commands below should be run from this directory (`activities/day_1`).
 
-## Activity 00: Extract Metadata Information From Abstract
+## Activity 01: Extract Metadata Information From Abstract
 ---
 
 In this activity, connect an OpenAI python client with the ALCF inference server.
-Some starter code is provided in `00_extract_claims.py`. Use the OpenAI client to extract claims from the abstract.
+Some starter code is provided in `01_extract_claims.py`. Use the OpenAI client to extract claims from the abstract.
 You can run the code with `uv`:
 
 ```
-uv run python 00_extract_claims.py --abstract sample_abstract.txt --model beam-1.0-bf16
+uv run python 01_extract_claims.py --abstract sample_abstract.txt --model beam-1.0-bf16
 ```
 
 Try putting in an abstract or paper that you understand so you can validate the results. 
 Vary the model and the temperature to investigate how those parameters affect the results coming out of the model. How are the models performing? How could you measure the performance? Could you scale the validation up?
 
-## Activity 01: Self-Consistency and Tree-of-Thought
+## Activity 02: Self-Consistency and Tree-of-Thought
 ---
 Now, use agents to review a paper. Build the self-consistency pattern and the tree-of-thought pattern to review a paper (A sample paper is included in the repo, but you may also use the text from your own paper, or a paper in your field.)
 The code is written with `asyncio` so that you can run multiple model queries in parallel.
@@ -43,12 +43,12 @@ Does the review you get from a tree-of-thought or using self-consistency seem be
 How could we evaluate the review? Should these reviews be aligned with human reviews?
 
 ```
-uv run python 01_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy self-consistency
-uv run python 01_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy tree-of-thought
+uv run python 02_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy self-consistency
+uv run python 02_review_claims.py --paper agency_as_paradigm.tex --reps 4 --strategy tree-of-thought
 ```
 
 
-## Activity 02: Tool Calling
+## Activity 03: Tool Calling
 ---
 Next we will look at the internals of how agents act by enabling an agent to use a tool.
 
@@ -62,10 +62,10 @@ You can try requests to the model to see what format the response is in.
 Look at the [responses api](https://developers.openai.com/api/docs/guides/migrate-to-responses?lang=python&tool-use=chat-completions) for information on host to use the OpenAI SDK.
 
 ```
-uv run python 02_tool_calling.py "<your question for the agent>"
+uv run python 03_tool_calling.py "<your question for the agent>"
 ```
 
-## Activity 03: Use Agentic Frameworks
+## Activity 04: Use Agentic Frameworks
 ---
 
 This activity will use LangGraph and Pydantic to build a structured LLM-workflow.
@@ -74,30 +74,30 @@ The workflow should use a loop that (1) proposes a hypothesis using the context 
 How do you see the review scores for the hypothesis improving over iterations? Where do you think a more intelligent model could improve the hypothesis the most? What tools would help in this process?
 
 ```
-uv run python 03_multistep_langgraph.py --context sample_abstract.txt --max-iterations 3
+uv run python 04_multistep_langgraph.py --context sample_abstract.txt --max-iterations 3
 ```
 
-## Activity 04: Build A MCP Server
+## Activity 05: Build A MCP Server
 ---
 
 To avoid having to change the agent code every time we write tools we will now write an MCP server.
-The client code has already been written for you. In `04_client.py` you will see a `LangChain` agent that is attached to an `MCPAdapter` tool. This setup allows the LLM to talk to any MCP server. The `LangChain` agent is internally a `LangGraph` workflow implementing a `ReAct` loop. The `create_agent` function abstracts those internals and provides other convenient methods.
+The client code has already been written for you. In `05_client.py` you will see a `LangChain` agent that is attached to an `MCPAdapter` tool. This setup allows the LLM to talk to any MCP server. The `LangChain` agent is internally a `LangGraph` workflow implementing a `ReAct` loop. The `create_agent` function abstracts those internals and provides other convenient methods.
 
 You will implement an `MCP` server to fetch domain specific information. 
-Some starter code is in the `04_server.py` file. To run this example, use two different terminals. In one, first run:
+Some starter code is in the `05_server.py` file. To run this example, use two different terminals. In one, first run:
 
 ```
-uv run python 04_server.py
+uv run python 05_server.py
 ```
 
 After the server is running, you should run:
 
 ```
-uv run python 04_client.py
+uv run python 05_client.py
 ```
 which will connect to the server and prompt you for a question.
 
-## Activity 05: Globus Compute
+## Activity 06: Globus Compute
 ---
 
 Lastly, we will connect an agent with remote compute resources using Globus Compute.
@@ -114,14 +114,14 @@ $ globus-compute-endpoint start <ENDPOINT_NAME>
 <!-- 
 Use this [guide](https://globus-compute.readthedocs.io/en/stable/tutorials/dynamic_python_environments.html) to configure an endpoint with a variable environment. -->
 
-The start command will print a UUID to identify the endpoint. Copy and paste that UUID into `compute_endpoint` in `05_globus_compute.py`.
+The start command will print a UUID to identify the endpoint. Copy and paste that UUID into `compute_endpoint` in `06_globus_compute.py`.
 
 > **Note:** Globus Compute serializes your Python functions and runs them on the endpoint, so the endpoint must use the same Python version as your client (3.13 for this repo). If you see deserialization errors, check that the versions match.
 
 The client script is already set up to run the agent. It picks one of the sample requests at random, and the agent chooses which of the three tools (`compute_primes`, `compute_energy`, `compute_trajectory`) to call. Each tool is wrapped with `gce_wrapper`, so the function is submitted to your endpoint and executed remotely instead of locally. Run it with:
 
 ```
-uv run python 05_globus_compute.py
+uv run python 06_globus_compute.py
 ```
 
 Try adding your own tool that runs a real computation on your endpoint. What changes would you need to make to run this on an HPC cluster?
