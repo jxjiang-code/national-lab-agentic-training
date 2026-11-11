@@ -2,6 +2,7 @@ import argparse
 import asyncio
 
 from openai import AsyncOpenAI
+import os
 
 review_prompt = \
 '''
@@ -38,27 +39,85 @@ Quality scores:
 async def self_consistency(model: str, paper: str, n: int = 4):
     with open(paper) as fp:
         text = fp.read()
-    client = AsyncOpenAI()
+    client = AsyncOpenAI(base_url=os.environ["OPENAI_BASE_URL"],
+                         api_key=os.environ["OPENAI_API_KEY"]
+                        )
 
     # TODO: Call the review prompt on the paper. Use async to parallelize the calls.
-    review_futures = ...
+    #!review_futures = ...
+    review_futures = [
+    client.chat.completions.create(
+        model=model,
+        messages=[{'role': 'user', 'content': review_prompt.format(text=text)}],
+        temperature=0.9,
+    )
+    for _ in range(n)
+    ]
     reviews = await asyncio.gather(*review_futures)
 
     # TODO: Use a majority vote or average to unify the scores
+    import re
+
+    review_texts = [r.choices[0].message.content for r in reviews]
+
+    scores = []
+    for t in review_texts:
+        m = re.search(r'Score:\s*([1-6])', t)
+        if m:
+            scores.append(int(m.group(1)))
+
+    print(f'Individual scores: {scores}')   # 先看一眼，很重要
+
+    if not scores:
+        raise ValueError('No scores could be parsed from any review')
+
+    from collections import Counter
+    final = Counter(scores).most_common(1)[0][0]    # 出现次数最多的那个分数
+    print(final)
+
 
 
 async def tree_of_thought(model: str, paper: str, n: int = 4):
     with open(paper) as fp:
         text = fp.read()
-    client = AsyncOpenAI()
+    client = AsyncOpenAI(base_url=os.environ["OPENAI_BASE_URL"],
+                         api_key=os.environ["OPENAI_API_KEY"]
+                         )
 
     # TODO: Call the review prompt on the paper. Use async to parallelize the calls.
-    review_futures = ...
+    #!review_futures = ...
+    review_futures = [
+        client.chat.completions.create(
+        model=model,
+        messages=[{'role': 'user', 'content': review_prompt.format(text=text)}],
+        temperature=0.7,
+    )
+    for _ in range(n)
+    ]
     reviews = await asyncio.gather(*review_futures)
 
     # TODO: Call model with the metareview prompt
+    review_texts = [r.choices[0].message.content for r in reviews]
+    joined_reviews = '\n\n'.join(
+        f'--- Review {i} ---\n{t}' for i, t in enumerate(review_texts, start=1)
+        )
+    metareview_response = await client.chat.completions.create(
+        model=model,
+        messages=[{'role': 'user', 'content': metareview_prompt.format(reviews=joined_reviews)}],
+        temperature=0.0,
+        )
+    metareview = metareview_response.choices[0].message.content
 
     # TODO: Call the model with the score prompt to produce a score
+    score_response = await client.chat.completions.create(
+        model=model,
+        messages=[{'role': 'user', 'content': score_prompt.format(
+        reviews=joined_reviews,metareview=metareview,)
+        }],
+        temperature=0.0,
+        )
+    final = score_response.choices[0].message.content
+    print(final)
 
 
 STRATEGIES = {

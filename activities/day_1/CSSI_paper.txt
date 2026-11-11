@@ -1,0 +1,780 @@
+LETTERS
+PUBLISHED ONLINE: 12 AUGUST 2012 | DOI: 10.1038/NPHOTON.2012.178
+
+Three-dimensional coherent X-ray surface
+scattering imaging near total external reﬂection
+Tao Sun1 *, Zhang Jiang1, Joseph Strzalka1, Leonidas Ocola2 and Jin Wang1 *
+Lensless X-ray coherent diffraction imaging (CDI) has emerged
+as a thriving ﬁeld promising applications in materials and biological sciences1–13 with a theoretical imaging resolution only
+limited by the X-ray wavelength. Most CDI methods use transmission geometry, which is not suitable for nanostructures
+grown on opaque substrates or for objects of interest comprising only surfaces or interfaces. Attempts have been made to
+perform CDI experiments in reﬂection geometry, both optically
+and with X-rays, but the reconstruction resulted in mostly
+planar images, with less success in the third dimension14,15.
+Here, we discuss the development of coherent surface scattering imaging in grazing-incidence geometry that takes advantage of enhanced X-ray surface scattering and interference
+near total external reﬂection. We demonstrate the successful
+reconstruction of substrate-supported non-periodic surface
+patterns in three dimensions with nanometre resolution in
+the direction normal to the substrate, promising wide applications in elucidating structures in substrate-supported and
+buried nanoelectronics and photonics.
+For samples such as thin ﬁlms, nanopatterns and buried interfaces,
+reﬂection-mode coherent diffraction imaging (CDI) can be more
+successful than transmission-mode CDI. Previous studies using
+reﬂection-mode CDI implied that the results were not sufﬁcient to
+generate true three-dimensional reconstruction of nanostructures at
+surfaces. To obtain unambiguous structural information in the
+third dimension normal to the substrate, we collected coherent
+surface scattering patterns from substrate-supported nanostructures
+at grazing-incidence angles in the vicinity of the sample critical
+angle (typically a fraction of a degree for hard X-rays), as shown in
+Fig. 1a. In this angular region, in-plane scattering is greatly enhanced
+as a result of total external reﬂection. As demonstrated in many X-ray
+studies, including reﬂectivity and diffuse scattering at grazing incidence, surface scattering is particularly sensitive to the sample electron density distribution in the plane and in the direction
+perpendicular to the substrate surface16–20, which allows depthresolved structural characterization to be achieved by varying the incident angle. At grazing incidence, the momentum transfer along the
+surface normal (z or qz direction) spans several orders of magnitude
+from 0.001 to .1 nm21, which enables high-resolution reconstruction of sample structures along the surface normal direction. At
+angles far beyond the critical angle, the scattering intensity (either
+coherent or incoherent) decreases algebraically with incident angle
+(or qz). The grazing-incidence coherent surface scattering imaging
+(CSSI) technique is therefore particularly suitable for weakly scattering non-periodic objects, as it ensures a large signal-to-noise ratio
+within a reasonable data collection time. Another advantage of
+grazing-incidence CSSI over high-angle reﬂection-mode CDI is its
+larger detectable area (a consequence of geometry), albeit with a correspondingly reduced resolution. All these unique scattering characteristics in the near total external reﬂection region promise an
+
+unprecedented surface sensitivity for mapping scattering intensity
+in reciprocal space and reconstructing the corresponding surface
+structures in three dimensions.
+To demonstrate the grazing-incidence CSSI concept, we ﬁrst
+examined a simple gold double-stripe structure, patterned on a
+3-mm-thick ﬂat silicon substrate along the x-direction. Figure 1b
+shows the scattering pattern obtained at an incident angle of
+ai ¼ 0.68, which is above the silicon critical angle (0.2458 at E ¼
+7.35 keV) and just below the gold critical angle (0.618). In contrast
+to conventional transmission CDI, where most incident X-rays
+penetrate through the sample without participating in diffraction
+events, the specular reﬂection (at qx and qy ≈ 0) in CSSI is part
+of the sample scattering pattern, similar to the results in
+Bragg-diffraction-based CDI4. Accordingly, no beam stop is
+required to block the spot, which allows low-q information to
+be limited only by the instrument resolution (dqx ≈ 7.6 ×
+1026 nm21, dqy ≈ 7.6 × 1024 nm21). The double-stripe conﬁguration is analogous to that of the classic Young’s double-slit experiment, where waves from two slits interfere to generate intensity
+modulations on the detection screen; however, there are several
+major different and also distinct characteristics. First, in addition
+to the X-rays being strongly reﬂected by the two gold stripes,
+weak scattering by the silicon substrate contributes to the interference process. Second, with the grazing-incidence geometry, the
+horizontal axis of the scattering pattern represents the in-plane
+y-component of momentum transfer in the small-angle region,
+and the vertical axis corresponds to both qz and qx components.
+Also, unlike in the transmission geometry, the qx component is
+not linearly represented by the vertical pixel position because of
+the way the Ewald sphere intercepts the reciprocal lattice (for a
+detailed explanation see Supplementary Section S1). This causes
+the scattering pattern shown in Fig. 1b to bend downwards at the
+large azimuthal scattering angle 2uf.
+Figure 1c (open circles) shows the scattering intensity proﬁle
+along qy , a line scan at qx ¼ 0 from the scattering pattern displayed
+in Fig. 1b. The simulation was based on Young’s double-slit experiment with a partially coherent X-ray beam. Numerically, the partial
+coherence was taken into account by the convolution of the instrument resolution and the ideal scattering curve21. Details of the
+simulation are presented in Supplementary Section S2. The
+remarkably good agreement between the data and the simulation
+demonstrates the feasibility of coherent surface scattering in the
+grazing-incidence geometry. One can see that the projected transverse coherence length extends over the millimetre-long stripes
+along the beam direction. Similar to conventional CDI methods,
+the CSSI scattering pattern can also be used for reconstructing the
+exit surface wave (ESW) by using phase-retrieval algorithms, such
+as hybrid input–output (HIO)22 and error reduction (ER)23. For
+reconstruction of a planar image on the x–y plane, the data must
+ﬁrst be treated to convert the original scattering pattern into one
+
+1
+
+X-ray Science Division, Advanced Photon Source, Argonne National Laboratory, Argonne, Illinois 60439, USA, 2 Center for Nanoscale Materials, Argonne
+National Laboratory, Argonne, Illinois 60439, USA. * e-mail: taosun@aps.anl.gov; wangj@aps.anl.gov
+
+586
+
+NATURE PHOTONICS | VOL 6 | SEPTEMBER 2012 | www.nature.com/naturephotonics
+
+© 2012 Macmillan Publishers Limited. All rights reserved.
+
+LETTERS
+
+NATURE PHOTONICS DOI: 10.1038/NPHOTON.2012.178
+a
+
+z
+y
+
+kf
+
+x
+
+αf
+
+ki
+
+αf (deg)
+
+b
+
+2θf
+
+αi
+
+0.62
+
+103
+
+0.61
+
+102
+
+0.60
+
+101
+
+0.59
+
+100
+
+0.58
+
+10−1
+−0.06 −0.04 −0.02
+
+c
+
+104
+
+Intensity (a.u.)
+
+103
+
+0.04
+
+0.02
+0.01
+0
+
+0.06
+
+Data
+Simulation
+
+1 μm
+
+102
+
+0
+0.02
+2θf (deg)
+
+m
+0μ
+
+20
+
+101
+
+‘N’ and ‘L’ letter structures were also fabricated, and the SEM images
+and CSSI data are shown in Supplementary Section S4.
+With these complex patterns, scattering speckles cover relatively
+large ranges of qx and qz , both of which are represented in the vertical directions in the scattering patterns. In addition, even at constant qx , the scattering intensity drops as the incident or exit angle
+increases. Accordingly, the isolation of qx and qz contributions
+and the performance of intensity normalization with respect to
+the incident and exit angles are prerequisites only for the twodimensional image reconstruction (see below and Supplementary
+Section S3). We therefore collected scattering patterns at different
+incident angles and measured the variation of the off-specular scattering intensity at a ﬁxed (qx , qy) spot, as shown in Fig. 3a,b. The
+dependence of scattering intensity on incident angle demonstrates
+the effectiveness of data collection under the grazing-incidence condition, where the scattering intensity is orders of magnitude higher
+than that collected at higher incident angles.
+To simulate the intensity curve in Fig. 3b, we developed a formfactor-independent model by combining the dynamical theory of
+reﬂectivity and the interference function of reﬂected waves.
+Because the goal of CDI is to obtain a reliable reconstruction
+without (or with minimal) a priori knowledge of the sample, our
+model does not account for any in-plane structural details of the
+sample. Instead, we directly model the interference of the ESWs at
+a certain point in the far ﬁeld by simply assuming two scattered
+waves: one from gold and another from silicon. The interference
+of these two waves is calculated using Parratt formalism16, with
+the path difference for the two waves propagating to the same
+spot on the detector. (Details of the model are provided in
+Supplementary Section S3.) The simulated result is shown in
+Fig. 3b as a solid line, and matches the data extremely well. With
+all the parameters obtained by data ﬁtting, the angle-dependent
+a
+
+100
+
+b
+
+z
+y
+
+−0.04 −0.03 −0.02 −0.01
+
+0
+
+0.01
+
+0.02
+
+0.03
+
+0.04
+
+0.32 μm
+
+qy (nm−1)
+
+Figure 1 | X-ray coherent surface scattering in grazing-incidence geometry.
+a, Schematic of the experiment with coordinate systems and incident (ai),
+reﬂected (af ) and azimuthal (2uf ) scattering angles. b, Scattering pattern
+(logarithmic scale; units ¼ counts) from a gold double-stripe structure.
+c, Intensity proﬁle along the qy direction (open circles) from the coherent
+scattering pattern in b at qx ¼ 0, and corresponding simulation (solid line).
+Inset: reconstructed planar ESW amplitude with intensity scale.
+
+x
+
+5μ
+m
+
+m
+0μ
+
+40
+
+5 μm
+
+c
+0.65
+
+αf (deg)
+
+0.60
+
+with orthogonal qx–qy coordinates (shown in Supplementary
+Section S2). The reconstructed image (that is, the amplitude of
+the ESW) of the double-stripe gold pattern is shown in the inset
+of Fig. 1c. Note that the pixel resolutions along the horizontal and
+vertical directions are different because of the grazingincident angle.
+Having demonstrated the applicability of CSSI, we now show that
+it can be used to reconstruct more complex non-periodic surface
+structures. Given a large projected transverse coherence length
+along the x-direction, we prepared sample patterns with extended
+features spanning hundreds of micrometres along that direction.
+Figure 2 presents a scanning electron microscopy (SEM) image
+(Fig. 2a) and a schematic (Fig. 2b) of a microsized gold outline
+pattern of the logo of the authors’ institute, Argonne National
+Laboratory. Figure 2c shows the scattering data obtained from the
+logo structure at an incident angle of ai ¼ 0.558. The pattern was
+stitched together with frames from nine different detector positions
+to extend the reciprocal-space data range. Surface patterns of the ‘A’,
+
+0.55
+103
+0.50
+102
+0.45
+
+101
+100
+−0.15
+
+−0.10
+
+−0.05
+
+0
+0.05
+2θf (deg)
+
+0.10
+
+0.15
+
+Figure 2 | SEM image of the sample and corresponding CSSI data.
+a, Angle-view SEM image of the sample with the Argonne National
+Laboratory logo pattern. b, Schematic of the pattern with major dimensions
+labelled. The thickness of the gold structure is 36 nm. c, Scattering pattern
+from the logo sample (logarithmic scale; units ¼ counts), which is composed
+of stitched patterns collected at nine different detector positions.
+
+NATURE PHOTONICS | VOL 6 | SEPTEMBER 2012 | www.nature.com/naturephotonics
+
+© 2012 Macmillan Publishers Limited. All rights reserved.
+
+587
+
+LETTERS
+b
+
+× 10−4
+−1
+
+ROl
+
+102
+
+0
+
+101.5
+101
+1
+
+100.5
+−0.01
+
+0
+
+0.01
+
+Data
+
+100
+
+Simulation
+
+200
+
+0.035
+0.030
+0.025
+
+107
+x (μm)
+
+102.5
+qx (nm−1)
+
+c
+
+108
+
+103
+Intensity (a.u.)
+
+a
+
+NATURE PHOTONICS DOI: 10.1038/NPHOTON.2012.178
+
+300
+
+0.020
+
+400
+
+0.015
+
+500
+
+0.010
+
+106
+
+0.005
+
+600
+105
+
+0
+0.4
+
+0.5
+
+qy (nm−1)
+
+0.6 0.7
+αi (deg)
+
+0.8
+
+0.9
+
+1
+
+2
+
+3
+4
+y (μm)
+
+5
+
+6
+
+Figure 3 | Two-dimensional reconstruction of grazing-incidence CSSI data. a, Low-q region of the logo scattering pattern shown in Fig. 2c. ROI, region of
+interest. b, Experimental data (open circles) and simulation (solid line) of off-specular scattering intensity as a function of incident angle. Data were collected
+from a region of interest at a ﬁxed (qx , qy ) position with strong scattering, as shown in a. c, Reconstructed planar ESW amplitude of the logo structure.
+Note that pixel resolutions along the horizontal and vertical directions are different.
+
+scattering contribution from the sample structure along the z-direction was calculated and used to normalize the two-dimensional scattering pattern for the constant-thickness structure. After qx axis
+adjustment and qz intensity normalization, reconstruction of the
+ESW amplitude was alternately performed using HIO and ER algorithms. The support was ﬁrst estimated based on the autocorrelation
+function of the scattering pattern, and then gradually improved after
+a few iterations. Figure 3c shows the ﬁnal result for the logo pattern
+with the aspect ratio adjusted to reﬂect the beam projection at the
+grazing-incidence angle.
+As found in an abundance of traditional reﬂectivity experiments,
+the additional qz dependence of the coherent scattering patterns
+during the angular scan strongly suggests that three-dimensional
+structural information is contained in the data set. To decipher
+the angular dependence, we collected a series of scattering data
+from the pattern at different incident angles ranging from 0.568 to
+0.98. The scattering patterns from lower incident angles were
+not counted for three-dimensional reconstruction because the
+Born approximation alone may not be sufﬁcient to interpret the
+wave ﬁelds and scattering below the critical angles. The threedimensional reciprocal-space data, shown in Fig. 4a, was constructed by ﬁlling the voxels in (qx , qy , qz) space with the
+corresponding speckle intensity from each two-dimensional scattering pattern. Here, the three-dimensional reciprocal pattern is shown
+by an iso-surface rendering effect—low-intensity voxels do not show
+up in the plot, which leads to a seemingly smaller q range than in the
+actual data collected and used for reconstruction. The reconstructed
+image in two dimensions could be used as support for the x–y plane
+in the three-dimensional reconstruction. For the z-direction, the
+support dimension was estimated by a Fourier transform of the
+specular reﬂection intensity curve (that is, Ispecular vs qz) after multiplying by q4z , analogous to obtaining a thickness value from reﬂectivity data using the Fourier method24. The reconstructed threedimensional image is shown in Fig. 4b,c (different viewing angles).
+The magnitude of the ESW amplitude at each z-location
+(between the two arrows in Fig. 4c) was extracted and plotted in
+Fig. 4d. The error bar of each datum point represents the standard
+deviation of intensities from 300 pixel locations in the x–y plane.
+The intensity proﬁle shows a peak with an extended plateau,
+which was ﬁt by a ﬂat-top Gaussian function, yielding a full-width
+at half-maximum (FWHM) of 36.9 nm, which is consistent with
+the thickness of the gold layer. The ﬂat-top Gaussian proﬁle is a
+model-independent ﬁt to the ESW amplitude in the z-direction
+reconstructed from the limited q range involved in the inverse
+Fourier transform. This is analogous to reconstructing a square
+wave with truncated reciprocal data in the Fourier space. The
+slope on each side of the ﬂat top represents the resolution of the
+height reconstruction, which should be approximately symmetrical.
+588
+
+Even though the pattern studied here has a simple structure along
+the z-direction (that is, uniform thickness), there is no fundamental
+limit for applying the CSSI technique to reconstruct more complex
+three-dimensional architectures. However, scattering intensity
+redistribution and normalization will involve iterative application
+of the distorted-wave Born approximation17,25 when the layered
+structure exhibits more complex scattering phenomena, such as
+wave-guide effects26, near total external reﬂection.
+At grazing incidence, spatial resolutions in the x-, y- and z-directions are highly anisotropic. Speciﬁcally, for a Coolsnap HQ2 detector placed 0.7 m away from the sample, the x and y resolutions at an
+incident angle of 0.68 and with nine detector frame tiles are 2.6 mm
+and 22 nm, respectively, and a scan of incident angle to 0.98 gives a z
+resolution of 2.7 nm. As determined by the detectable q ranges, the
+real-space resolutions are limited by the coherent ﬂux of the incident beam and the efﬁciency of the detector. Hypothetically, if the
+coherent ﬂux is 1 × 1012 photons/s (103 times higher than the
+current case), the maximum q where the scattering intensity
+can be detected will be 10 times larger, leading to approximately
+10 times higher real-space resolutions in all three directions. In
+addition, detectors with higher quantum efﬁciency and dynamic
+range and a lower noise level can improve the resolution. Even
+with these improvements, the resolution in the x-direction can
+still be one order of magnitude lower than that of the y-direction.
+One potential remedy is to take scattering images at several azimuthal angles around the sample normal direction to provide
+access to a wider in-plane q range for higher resolution. For structures composed of lighter elements, such as carbon, aluminium
+and iron, the detectable q range will be smaller than that of a
+strong scatterer like gold.
+To conclude, we have developed a novel, optics-free, hard X-ray
+imaging technique by synergistically combining coherent surface
+scattering and grazing incidence near the sample total external
+reﬂection. By visualizing non-periodic gold nanostructures on a
+silicon substrate, we have demonstrated that CSSI is capable of
+reconstructing not only planar images of surface structures, but
+also three-dimensional architectures with nanometre resolution
+along the surface normal. Moreover, CSSI can be readily adapted
+to other coherent imaging techniques, such as resonant CDI,
+Fresnel CDI, holography, ptychography and ankylography, to
+study three-dimensional nanoscaled structures. Thanks to enhanced
+scattering near total external reﬂection, even with a hard X-ray
+coherent ﬂux of 1 × 109 photons/s, our three-dimensional reconstruction of the images is practical. It should pave the way for nanostructure visualization in biology, materials science and condensed
+matter physics. With higher resolution it will ﬁnd applications in
+time-resolved studies of biological membranes and supramolecules
+in an aqueous environment, thin ﬁlm and quantum dot growth at
+NATURE PHOTONICS | VOL 6 | SEPTEMBER 2012 | www.nature.com/naturephotonics
+
+© 2012 Macmillan Publishers Limited. All rights reserved.
+
+LETTERS
+
+NATURE PHOTONICS DOI: 10.1038/NPHOTON.2012.178
+a
+
+b
+z
+
+y
+
+nm
+500
+
+d
+
+× 10−4
+
+qz
+qy
+
+5×
+
+10 −1
+
+nm −1
+
+μm
+50
+
+50 n
+m
+
+x
+
+−1
+
+−2 nm
+
+10
+−1
+m
+−4 n
+
+10
+
+z
+
+μm
+
+Data
+
+4
+ESW amplitude (a.u.)
+
+20 nm
+
+y
+
+x
+20
+0
+
+c
+
+qx
+
+500 nm
+
+Flat-top Gaussian
+3
+
+2
+
+1
+
+0
+
+20
+
+40
+
+60
+z (nm)
+
+80
+
+100
+
+120
+
+Figure 4 | Three-dimensional reconstruction of grazing-incidence CSSI data. a, Iso-surface rendering of the three-dimensional reciprocal data of the logo
+pattern, constructed from a series of two-dimensional scattering patterns obtained with different incident angles. b,c, Reconstructed three-dimensional ESW
+amplitude of the logo pattern from two different viewing angles. d, ESW amplitude as a function of different z (normal to the surface). The curve was ﬁt
+using a ﬂat-top Gaussian function with a FWHM of 36.9 nm which agrees well with the thickness of the gold layer. The error bar of each datum point
+represents the standard deviation.
+
+surfaces and interfaces, and assembly of planar polymer nanocomposites27. In true reﬂection geometry, it can be a perfect means with
+which to study the mesophase liquid/solid interaction on nanopatterned grooved surfaces28,29 and to perform non-destructive structural analysis of emerging three-dimensional nanocircuits
+integrated with thick wafers30.
+
+Methods
+The samples studied in the present work were prepared in the cleanroom at the
+Center for Nanoscale Materials, Argonne National Laboratory. Nano- and
+microstructures of the gold top layer and a titanium adhesion layer were fabricated
+on ﬂat silicon substrates using electron-beam lithography and sputtering techniques.
+The double-stripe pattern had a nominal line width of 850 nm, separation of 2 mm
+and length of 2 mm. The overall length of the logo pattern was 391 mm (x-direction),
+while the maximum width of the entire pattern was 5.1 mm ( y-direction) and the
+width of the thinnest line in the pattern was 350 nm. For both samples, the thickness
+of the gold layer was 36 nm and the titanium adhesion layer between the gold layer
+and the silicon substrate was 7 nm thick.
+The grazing-incidence CSSI experiments were performed at the 8-ID-E beamline
+of the Advanced Photon Source, Argonne National Laboratory. The monochromatic
+incident beam (photon energy E ¼ 7.35 keV with DE/E ¼ 2 × 1024) along the
+x-direction (see Fig. 1) was collimated by three sets of slit pairs to obtain an
+approximate Gaussian intensity distribution in the y–z plane with a FWHM of
+15 mm in both the horizontal and vertical directions. The transverse coherence
+length along the horizontal direction was 7 mm and was fully coherent across the
+entire vertical direction over the 15 mm beam. The longitudinal coherence length
+in our experiment was 1 mm, sufﬁcient for the grazing-incidence small-angle
+scattering geometry. A detailed discussion on coherence is included in
+Supplementary Section S5. The ﬂux was typically 1 × 109 photons/s for all
+experiments. The incident angles ranged from 0.35 to 0.98, around the critical angle
+of gold (ac ¼ 0.618 at l ¼ 0.1687 nm). A Coolsnap HQ2 detector (1,040 × 1,392
+pixels, 6.45 × 6.45 mm2 per pixel and 12-bit readout) was placed 0.7 m away from
+
+the sample for collecting scattering patterns. A ×5 lens was used, resulting in an
+effective pixel dimension of 1.29 × 1.29 mm2 on the detector. The scintillator crystal
+was a 5-mm-thick ﬁlm of yttrium aluminium garnet doped with cerium (YAG:Ce).
+The overall detection efﬁciency of the detector system was estimated to be 0.13%
+(750 photons/count). The scattering pattern from the double-stripe structure was
+averaged over 40 exposures with 5 s exposure time each, and the scattering pattern
+from the logo structure was averaged over ﬁve exposures with 45 s exposure
+time each.
+Our CSSI set-up had no optics between the slits and the detector, allowing
+our imaging technique to be easily adopted by any hard or soft X-ray scattering
+beamline where coherence of the source is preserved. In the grazing-incidence
+geometry, the sample functions as the beam stop, because the strong incident beam
+is sufﬁciently attenuated by the substrate. Therefore, extremely low-q (qx ≈ 7.6 ×
+1026 nm21, qy ≈ 7.6 × 1024 nm21) scattering intensity is available in CSSI
+providing the ‘support’ or maximum feature size during both two- and threedimensional reconstructions.
+For phase retrieval, each reconstruction contained 100 iterations, which
+alternated between nine applications of the HIO algorithm and one application of
+the ER algorithm (except for the last iteration). During iteration, those pixels with
+an intensity lower than a certain threshold, including the void voxels in a threedimensional reciprocal pattern, were masked out and allowed to ﬂoat. Note that
+the data for three-dimensional reconstruction were multiplied by q2z before
+performing reconstruction as a calibration of the algebraic decay of the diffuse
+scattering intensity with qz (ref. 17). The positivity constraint was also applied for the
+three-dimensional reconstruction. The ﬁnal results for both two- and threedimensional cases were averaged over 100 total reconstructions, each starting with a
+random phase and random value of the feedback parameter b in the HIO algorithm
+(b ≈ 0.6–0.9), and then normalized with the intensity proﬁle of the incident beam.
+In our experiment, because the beam size was larger than the transverse coherence
+length in the y-direction, the ‘specular’ reﬂection spot contained incoherent and
+coherent scattering intensity beyond the instrument resolution. The specular
+reﬂection region was therefore also masked out using a numerical beam stop with a
+maximum diameter of 25 pixels. Even so, the scattering pattern provided sufﬁcient
+low-q information (qx ≈ 1 × 1025 nm21, qy ¼ 8.8 × 1024 nm21).
+
+NATURE PHOTONICS | VOL 6 | SEPTEMBER 2012 | www.nature.com/naturephotonics
+
+© 2012 Macmillan Publishers Limited. All rights reserved.
+
+589
+
+LETTERS
+
+NATURE PHOTONICS DOI: 10.1038/NPHOTON.2012.178
+
+For two-dimensional imaging, two competing factors need to be considered
+when selecting the incident angle for a particular sample structure: detectable qx
+range and off-specular scattering intensity. In grazing-incidence geometry, a smaller
+incident angle yields a smaller range of qx , and therefore lower real-space resolution
+in the x-direction. Thus, a relatively large incident angle is favourable. Plots of the
+detectable q range at different incident angles are shown in Supplementary
+Section S1. On the other hand, because the scattering intensity decreases with qz ,
+with a relatively low incident coherent photon ﬂux as in this study, a smaller incident
+angle is desirable to achieve a high signal-to-noise ratio in a reasonable amount of
+data collection time. Taking the logo structure as an example, the optimized incident
+angle for the logo structure lies around 0.558 in our experiment, where the q range is
+large enough to give the necessary x resolution and the off-specular scattering
+intensity reaches a local maximum due to a constructive interference between the
+surface scattering signals from the sample.
+
+Received 6 May 2012; accepted 22 June 2012;
+published online 12 August 2012
+
+References
+1. Miao, J. W., Charalambous, P., Kirz, J. & Sayre, D. Extending the methodology of
+X-ray crystallography to allow imaging of micrometre-sized non-crystalline
+specimens. Nature 400, 342–344 (1999).
+2. Eisebitt, S. et al. Lensless imaging of magnetic nanostructures by X-ray spectroholography. Nature 432, 885–888 (2004).
+3. Shapiro, D. et al. Biological imaging by soft X-ray diffraction microscopy. Proc.
+Natl Acad. Sci. USA 102, 15343–15346 (2005).
+4. Pfeifer, M. A., Williams, G. J., Vartanyants, I. A., Harder, R. & Robinson, I. K.
+Three-dimensional mapping of a deformation ﬁeld inside a nanocrystal. Nature
+442, 63–66 (2006).
+5. Chapman, H. N. et al. Femtosecond time-delay X-ray holography. Nature 448,
+676–679 (2007).
+6. Abbey, B. et al. Keyhole coherent diffractive imaging. Nature Phys. 4,
+394–398 (2008).
+7. Thibault, P. et al. High-resolution scanning X-ray diffraction microscopy.
+Science 321, 379–382 (2008).
+8. Raines, K. S. et al. Three-dimensional structure determination from a single
+view. Nature 463, 214–217 (2010).
+9. Giewekemeyer, K. et al. Quantitative biological imaging by ptychographic X-ray
+diffraction microscopy. Proc. Natl Acad. Sci. USA 107, 529–534 (2010).
+10. Abbey, B. et al. Lensless imaging using broadband X-ray sources. Nature Photon.
+5, 420–424 (2011).
+11. Robinson, I. & Harder, R. Coherent X-ray diffraction imaging of strain at the
+nanoscale, Nature Mater. 8, 291–298 (2009).
+12. Chapman, H. N. & Nugent, K. A. Coherent lensless X-ray imaging. Nature
+Photon. 4, 833–839 (2010).
+13. Yefanov, O. M. et al. Coherent diffraction tomography of nanoislands from
+grazing-incidence small-angle X-ray scattering. Appl. Phys. Lett. 94,
+123104 (2009).
+14. Marathe, S. et al. Coherent diffraction surface imaging in reﬂection geometry.
+Opt. Express 18, 7253–7262 (2010).
+15. Roy, S. et al. Lensless X-ray imaging in reﬂection geometry. Nature Photon. 5,
+243–245 (2011).
+16. Parratt, L. G. Surface studies of solids by total reﬂection of X-rays. Phys. Rev. 95,
+359–369 (1954).
+
+590
+
+17. Sinha, S. K., Sirota, E. B., Garoff, S. & Stanley, H. B. X-ray and neutron-scattering
+from rough surfaces. Phys. Rev. B 38, 2297–2311 (1988).
+18. Schlomka, J. P. et al. X-ray-diffraction from Si/Ge layers—diffuse-scattering in
+the region of total external reﬂection. Phys. Rev. B 51, 2311–2321 (1995).
+19. Tolan, M., Press, W., Brinkop, F. & Kotthaus, J. P. X-ray-diffraction from laterally
+structured surfaces—total external reﬂection. Phys. Rev. B 51, 2239–2251 (1995).
+20. Jiang, Z., Lee, D. R., Narayanan, S., Wang, J. & Sinha, S. K. Waveguide-enhanced
+grazing-incidence small-angle X-ray scattering of buried nanostructures in thin
+ﬁlms. Phys. Rev. B 84, 075440 (2011).
+21. Dutta, P. & Sinha S. K. Analytic form for the static structure factor for a ﬁnite
+two-dimensional harmonic lattic. Phys. Rev. Lett. 47, 50–53 (1981).
+22. Fienup, J. R. Reconstruction of an object from modulus of its Fourier transform.
+Opt. Lett. 3, 27–29 (1978).
+23. Gerchberg, R. W. & Saxton, W. O. A practical algorithm for the determination of
+phase from image and diffraction plane pictures. Optik 35, 237–246 (1972).
+24. Seeck, O. H. et al. Analysis of X-ray reﬂectivity data from low-contrast polymer
+bilayer systems using a Fourier method. Appl. Phys. Lett. 76, 2713–2715 (2000).
+25. Lazzari, R. IsGISAXS: a program for grazing-incidence small-angle X-ray
+scattering analysis of supported islands. J. Appl. Crystallogr. 35, 406–421 (2002).
+26. Wang, J., Bedzyk, M. J. & Caffrey, M. Resonance-enhanced X-rays in
+thin-ﬁlms—a structure probe for membranes and surface-layers. Science 258,
+775–778 (1992).
+27. Lin, Y. et al. Self-directed self-assembly of nanoparticle/copolymer mixtures.
+Nature 434, 55–59 (2005).
+28. Hofmann, T. et al. Wetting of nanopatterned grooved surfaces. Phys. Rev. Lett.
+104, 106102 (2010).
+29. Reyssat, M., Yeomans, J. M. & Quere, D. Impalement of fakir drops. Europhys.
+Lett. 81, 026006 (2008).
+30. Xie, Y., Cong, J. & Sapatnekar, S. Three-Dimensional Integrated Circuit Design:
+EDA, Design and Microarchitectures (Springer, 2009).
+
+Acknowledgements
+The authors thank X. Huang for constructive suggestions, and M. Guizar, S. Sinha,
+C. Jacobson, A. Sandy and S. Narayanan for valuable discussions. The authors also thank
+A. Khounsary for providing the ultraﬂat silicon substrate, and B. Liu, A. Yan, V. Dravid,
+J. Qian, L. Assouﬁd, R. Divan, D. Rosenmann, C. Liu and M. Wieczorek for their assistance
+with sample fabrication and characterization. R. Bradford, T. Lutes and M. Rivers are
+thanked for their cooperation with detector usage. Use of the Advanced Photon Source and
+the Center for Nanoscale Materials were supported by the US Department of Energy Ofﬁce
+of Science (contract no. DE-AC02-06CH11357).
+
+Author contributions
+J.W. conceived the project. T.S., Z.J. and J.W. designed the experiment and participated in
+data analysis. T.S., Z.J. and J.S. conducted the experiment. Samples were fabricated by T.S.
+and L.O. All authors discussed the results and contributed to writing the manuscript.
+
+Additional information
+Supplementary information is available in the online version of the paper. Reprints and
+permission information is available online at http://www.nature.com/reprints. Correspondence
+and requests for materials should be addressed to J.W. and T.S.
+
+Competing ﬁnancial interests
+The authors declare no competing ﬁnancial interests.
+
+NATURE PHOTONICS | VOL 6 | SEPTEMBER 2012 | www.nature.com/naturephotonics
+
+© 2012 Macmillan Publishers Limited. All rights reserved.
+
+

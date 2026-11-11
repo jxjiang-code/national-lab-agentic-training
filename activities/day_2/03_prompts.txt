@@ -1,8 +1,0 @@
-Pull papers from here: https://proceedings.mlsys.org/paper_files/paper/2026. Start with ~20. 
-Put them into a sample_papers folder in this repo.
-
-Read ProfInfer and come up with 2 questions about the paper that could only be answered by reading the paper. 
-One of them should use the specific terminology in the paper (i.e. so it could be found with a grep or something similar), one should use semantically similar terms but not the exact terms.
-Write the questions so they can be asked without specific knowledge of which paper they are referring to.
-Write them to questions.json with a 'question' field, an 'answer' field and a 'category' field that is either 'semantic' or 'lexical' and a `source_paper` field which is the name of the saved file.
-Look at `03_long_context_benchmark.py` to see how these files will be used and should be formatted.

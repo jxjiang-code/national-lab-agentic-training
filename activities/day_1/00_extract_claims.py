@@ -1,11 +1,16 @@
 import argparse
 
 from openai import OpenAI
+import os
+
+#import argo-openai
 
 def main(model: str, abstract: str):
     with open(abstract) as fp:
         text = fp.read()
-    client = OpenAI()
+    client = OpenAI(base_url=os.environ["OPENAI_BASE_URL"],
+                    api_key=os.environ["OPENAI_API_KEY"]
+                    )
 
     prompt = f'Extract the claims and evidence from this paper:\n {text}'
 
@@ -17,11 +22,23 @@ def main(model: str, abstract: str):
     # How are the models performing? How could you measure the performance?
     # Could you scale the validation up?
 
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role":"user", "content":prompt}
+        ]
+    )
+
+    # print(response)
+    print(response.choices[0].message.content)
+    
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-m', '--model', default='beam-1.0-bf16')
     parser.add_argument('-a', '--abstract', default='sample_abstract.txt')
     ops = parser.parse_args()
+    #print(ops.model, ops.abstract)
 
     main(ops.model, ops.abstract)

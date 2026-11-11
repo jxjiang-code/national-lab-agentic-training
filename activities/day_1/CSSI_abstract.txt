@@ -1,0 +1,20 @@
+Lensless X-ray coherent diffraction imaging (CDI) has emerged
+as a thriving field promising applications in materials and bio-
+logical sciences1–13 with a theoretical imaging resolution only
+limited by the X-ray wavelength. Most CDI methods use trans-
+mission geometry, which is not suitable for nanostructures
+grown on opaque substrates or for objects of interest compris-
+ing only surfaces or interfaces. Attempts have been made to
+perform CDI experiments in reflection geometry, both optically
+and with X-rays, but the reconstruction resulted in mostly
+planar images, with less success in the third dimension14,15
+.
+Here, we discuss the development of coherent surface scatter-
+ing imaging in grazing-incidence geometry that takes advan-
+tage of enhanced X-ray surface scattering and interference
+near total external reflection. We demonstrate the successful
+reconstruction of substrate-supported non-periodic surface
+patterns in three dimensions with nanometre resolution in
+the direction normal to the substrate, promising wide appli-
+cations in elucidating structures in substrate-supported and
+buried nanoelectronics and photonics.
