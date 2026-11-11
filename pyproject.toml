@@ -1,0 +1,17 @@
+[project]
+name = "national-lab-agentic-training"
+version = "0.1.0"
+requires-python = ">=3.13,<3.15"
+dependencies = [
+    "globus-compute-sdk>=4.19.0",
+    "langchain[mcp]>=1.4.8",
+    "langchain-openai>=1.7.3",
+    "pydantic[email]>=2.14.1",
+    "openai>=3.40.0",
+    "langgraph>=1.2.19",
+    "fastmcp>=4.1.5",
+    "ase>=3.29.0",
+    "pypdf>=6.21.4",
+    "chromadb>=1.5.9",
+    "openai-agents>=0.24.0",
+]
