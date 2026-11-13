@@ -1,0 +1,14 @@
+[
+  {
+    "question": "One paper's profiler produces three analysis views named ProfDAG, ProfTime, and ProfStat. For the ProfTime timeline view, what intermediate trace format is the raw trace data converted into, and which visualization tool is used to render the resulting timeline?",
+    "answer": "The raw trace data is converted into the Chrome Trace Event Format, and the timeline is then visualized with Perfetto.",
+    "category": "lexical",
+    "source_paper": "profinfer_an_ebpf_based_fine_grained_llm_inference_profiler.pdf"
+  },
+  {
+    "question": "A paper introduces a lightweight tool for measuring where time and hardware resources go when a large language model runs on a small, power-limited computer rather than in a data center. It compares the slowdown its own measurement adds against the slowdown added by the measurement feature built into a popular cross-platform engine for running standard neural networks. What are the two slowdown figures for text generation?",
+    "answer": "The paper's own profiler (ProfInfer) slows decoding by about 3.60% (3.60 +/- 0.80%), while the ONNX Runtime profiler slows it by about 8.91% (8.91 +/- 1.94%). The comparison uses 4-bit quantized LLMs, with ProfInfer's structure-parsing (Str.) and hardware-counter (PMC) flags disabled so that both profilers trace only operator runtimes on the main thread. Prefill overhead is negligible for both (0.25% vs 0.46%).",
+    "category": "semantic",
+    "source_paper": "profinfer_an_ebpf_based_fine_grained_llm_inference_profiler.pdf"
+  }
+]
